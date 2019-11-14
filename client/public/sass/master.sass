@@ -1,0 +1,411 @@
+$lightred: #D72638
+$red: #590004
+$dark: #050505
+$grey: #363636
+$light: #E2DEDE
+
+@font-face 
+	font-family: Bebas
+ 	src: url("/public/fonts/Bebas.ttf")
+
+$Bebas: 'Bebas' , sans-serif
+
+*
+	font-family: Avenir
+	transition: .5s
+	&:focus
+		outline: none !important
+body
+	background-color: $dark
+a
+	text-decoration: none
+.bold
+	font-weight: bold
+.text-white
+	color: $light
+.mb-1
+	margin-bottom: 1vh !important
+.mb-2
+	margin-bottom: 2vh !important
+.mb-3
+	margin-bottom: 3vh !important
+.mb-4
+	margin-bottom: 4vh !important
+.mb-5
+	margin-bottom: 5vh !important
+
+.el-menu.el-menu--horizontal
+	background-color: transparent
+	border-bottom: 0 !important
+	a
+		color: $light !important
+		&:hover
+			color: $lightred !important
+		.search
+			color: $lightred
+	.picture-profile
+		width: 30px
+		margin-right: 0.7vw
+		border-radius: 100%
+	.el-submenu__title
+		color: $light !important
+	.hypertube
+		color: $lightred !important
+		text-decoration: none
+		font-size: 1.5rem
+		font-family: $Bebas
+		font-weight: bold
+	.is-active
+		border-bottom-color: $lightred !important
+	.el-submenu__title
+		text-align: right
+		padding-right: 50px
+		&:hover, &:active, &:focus
+			background-color: transparent
+	.el-menu-item
+		background-color: transparent !important
+		&:hover, &:active, &:focus
+			background-color: transparent !important
+.el-menu--horizontal 
+	.el-menu 
+		background-color: $grey
+		.el-menu-item
+			background-color: $grey !important
+			&:hover, &:active, &:focus 
+				color: $light !important
+			a
+				color: #909399
+				&:hover, &:active, &:focus 
+					color: $light !important
+		.is-active
+			color: $light !important
+			a
+				color: $light !important
+
+#loginPage, #registerPage, #forgotPassword
+	width: 100%
+	#formContainer 
+		background-color: transparent
+		color: $light
+		width: 50%
+		margin-left: auto
+		margin-right: auto
+		margin-top: 15vh
+	.el-card
+		border: none !important
+		.el-form-item__label
+			color: $light !important
+		span.login
+			color: $lightred
+			font-size: 1.2rem
+		a
+			color: $lightred
+		.el-button
+			background-color: $lightred !important
+			color: $light !important
+			border: none
+			transition: .5s
+			&:hover
+				background-color: $red !important
+	.oauth
+		text-align: center
+		button
+			background-color: $lightred !important
+			color: $light !important
+			border: none
+			padding: 5px 10px
+			margin: 10px
+			cursor: pointer
+			&:hover
+				background-color: $red !important
+
+.el-loading-spinner
+	i, .el-loading-text
+		font-size: 2rem
+		color: $lightred !important
+
+.home
+	.el-loading-spinner
+		top: 20%
+
+.el-button--ourprimary
+	border: none !important
+	color: $light !important
+	background: $lightred !important
+	transition: .5s !important
+	&:hover
+		background-color: $red !important
+
+.el-button--ourdefault
+	border: none !important
+	color: $dark !important
+	background: $light !important
+	transition: .5s !important
+	&:hover
+		background-color: $grey !important
+
+.home
+	color: $light
+	margin-top: 5vh
+	margin-left: auto
+	margin-right: auto
+	.el-date-editor
+		width: 100% !important
+	div.infinite-list
+		list-style: none
+		padding: 0
+		margin-top: 5vh
+		div
+			position: relative
+			margin-bottom: 30px
+			padding-bottom: 160px
+			.miniature
+				width: 90%
+				margin-left: 5%
+				border-radius: 5px
+				background-size: cover
+				background-position: 50% 50%
+				cursor: pointer
+				transition: .5s
+				&:hover
+					-webkit-transform: scale(1.15)
+          			transform: scale(1.15)
+			.note
+				position: absolute
+				top: 3%
+				right: 0
+				background-color: $red
+				padding: 5px 15px
+				border-top-right-radius: 5px
+			.title
+				position: absolute
+				left: 5%
+				bottom: 90px
+				color: $lightred
+				font-weight: 500
+			.date
+				position: absolute
+				left: 5%
+				bottom: 60px
+				font-weight: 100
+				font-style: italic
+			.runtime
+				position: absolute
+				left: 5%
+				bottom: 40px
+				font-weight: 100
+				font-style: italic
+			.seen
+				position: absolute
+				left: 5%
+				right: 5%
+				bottom: 140px
+				border-color: $lightred !important
+			.director
+				position: absolute
+				left: 5%
+				bottom: 20px
+				font-weight: 100
+				font-style: italic
+	div.preview
+		margin-top: 5vh
+		margin-bottom: 5vh
+		position: absolute
+		z-index: 2
+		background-color: $dark
+		.miniature
+			margin-top: 1em
+			width: 50%
+			margin-left: 25%
+			border-radius: 5px
+			background-size: cover
+			background-position: 50% 50%
+		.title
+			color: $lightred
+			font-weight: bold
+			font-family: $Bebas
+		.summary
+			font-weight: 100
+			text-align: justify
+			font-style: italic
+		button
+			background-color: $lightred !important
+			color: $light !important
+			border: none
+			padding: 5px 10px
+			margin: 10px
+			cursor: pointer
+			border-radius: 5px
+			&:hover
+				background-color: $red !important
+		.close
+			float: right
+			color: $lightred !important
+			background-color: transparent !important
+			font-size: 2rem
+			&:hover
+				background-color: transparent !important
+				color: $red
+
+.player
+	#video
+		min-height: 200px
+	h1
+		font-size: 2rem
+		span
+			color: $lightred
+			font-size: 3rem
+		small
+			font-size: 1rem
+	img
+		height: 300px
+		float: left
+		margin-right: 2vw
+		margin-left: 2vw
+		margin-bottom: 5vw
+	.resume
+		font-style: italic
+		text-align: justify
+		margin-right: 2vw
+		margin-top: 5vh
+	.casting
+		margin-left: 2vw
+		clear: both
+	.time
+		margin-left: 2vw
+	.genders
+		margin-left: 2vw
+	#comments
+		width: 75vw
+		margin: auto
+		.text-white
+			min-height: 200px
+		h2.text-white
+			min-height: 0
+		.img_comment
+			border-radius: 50%
+			height: 50px
+			float: left
+		.username_comment
+			line-height: 50px
+			vertical-align: bottom
+			color: $lightred
+			margin-left: 20px
+		.date_comment
+			line-height: 50px
+			vertical-align: bottom
+			color: $grey
+			margin-left: 20px
+		.content_comment
+			margin-left: 70px
+			font-style: italic
+			margin-top: 0
+			margin-bottom: 50px
+		.input_comment
+			margin-bottom: 2px
+			input
+				background-color: $dark
+				color: $light
+				border: 1px solid $light
+				transition: .5s
+				&:focus
+					border: 1px solid $lightred
+		.button_comment
+			text-align: right
+			button
+				padding: 5px 10px
+				background-color: $red
+				color: $light
+				border: 0
+				outline: 0
+				cursor: pointer
+
+.profile
+	position: relative
+	#other_user_picture
+		border-radius: 100%
+		height: 8vh
+		float: left
+		margin-right: 2vw
+	.profile-title
+		line-height: 8vh
+		vertical-align: middle
+		color: #E2DEDE
+		margin-left: 3vw
+		margin-top: 3vh
+	.profile-informations
+		color: #E2DEDE
+		position: absolute
+		right: 3vw
+		top: 0
+	.profile-library
+		margin-top: 10vh
+		.profile-library-title
+			color: #E2DEDE
+			margin-left: 2vw
+		.profile-library-list
+			.list-container
+				text-align: center
+				width: 100%
+				height: 40vh
+				img
+					width: calc(95% / 5)
+					padding: 0.5%
+.settings
+	.settings-title
+		color: $light
+		margin-left: 3vw
+		margin-top: 3vh
+	.settings-email
+		margin-left: 2vw
+	.el-form
+		padding-top: 5vh
+		width: 40vw
+		margin: auto
+		.el-form-item__label
+			color: $light
+		.input-clean
+			input
+				background-color: $dark
+	.pp-title
+		color: $light
+		margin-left: 3vw
+		margin-top: 3vh
+		padding-top: 5vh
+	.container
+		width: 100%
+		#img-container
+			margin: 0 auto
+			width: 80vw
+			img
+				margin: 10px
+				width: calc(10vw - 20px)
+				cursor: pointer
+			img:hover
+				box-shadow: 0px 0px 10px 3px rgba(226,222,222,1)
+	.settings-language
+		text-align: center
+		.lang
+			width: 50px
+			margin: 10px
+		.grey
+			 filter: grayscale(100%)
+		img
+			cursor: pointer
+				
+			
+.input-clean
+	input
+		background-color: $dark
+
+.page404
+	margin-top: 20vh
+	.page404-title
+		color: $light
+		font-size: 15rem
+		text-align: center
+		margin: 0
+	.page404-p
+		margin-top: -4vh
+		color: $light
+		text-align: center
