@@ -40,8 +40,9 @@ ytsRouter.get('/:query/:page/:min_rate/:max_rate/:min_year/:max_year', async (re
 		req.params.max_year = 'null'
 
 	axios
-		.get('https://yts.unblocked.tw/api/v2/list_movies.json?' + req.params.query + '&' + page)
+		.get('https://yts.lt/api/v2/list_movies.json?' + req.params.query + '&' + page)
 		.then(async response => {
+			console.log("there is a response");
 			result = response.data.data.movies
 			if (req.params.min_rate != 'null' && req.params.max_rate != 'null') {
 				result2 = [];
@@ -94,7 +95,7 @@ ytsRouter.get('/:query/:page/:min_rate/:max_rate/:min_year/:max_year', async (re
 				}
 				result = result2
 			}
-			result2 = result
+			result2 = result;
 			if (req.params.query.includes('&query_term=')) {
 				var result3;
 				for (var i = 0; i < result2.length; i++) {
@@ -104,17 +105,17 @@ ytsRouter.get('/:query/:page/:min_rate/:max_rate/:min_year/:max_year', async (re
 					result[i].actors = result3.data.Actors
 				}
 			}
-			for (var i = 0; i < result.length; i++) {
-				if (result[i].torrents.length == 0) {
-					result.splice(i, 1);
-					continue;
-				}
-				img = await axios.get(result[i].medium_cover_image);
-				if (!['image/jpeg', 'image/png'].includes(img.headers['content-type'])) {
-					console.log(result[i].title + " has not valid image");
-					result.splice(i, 1);
-				}
-			}
+			// for (var i = 0; i < result.length; i++) {
+			// 	if (result[i].torrents.length == 0) {
+			// 		result.splice(i, 1);
+			// 		continue;
+			// 	}
+			// 	img = await axios.get(result[i].medium_cover_image);
+			// 	if (!['image/jpeg', 'image/png'].includes(img.headers['content-type'])) {
+			// 		console.log(result[i].title + " has not valid image");
+			// 		result.splice(i, 1);
+			// 	}
+			// }
 			res.json(result);
 		})
 		.catch(error => {
@@ -133,7 +134,7 @@ ytsRouter.get('/preview/:id', async (req, res) => {
 	} else {
 		console.log("New movie entry...")
 		axios
-			.get('https://yts.unblocked.tw/api/v2/movie_details.json?movie_id=' + req.params.id)
+			.get('https://yts.lt/api/v2/movie_details.jso?movie_id=' + req.params.id)
 			.then(async (response) => {
 				movieData = response.data.data.movie;
 				// console.log(movieData)
